@@ -58,11 +58,13 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'FactsAPI.urls'
 
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-    ],
-}
+if DEBUG:
+    REST_FRAMEWORK = {
+        'DEFAULT_RENDERER_CLASSES': [
+            'rest_framework.renderers.JSONRenderer',
+        ],
+    }
+    
 
 TEMPLATES = [
     {
